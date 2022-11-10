@@ -1,4 +1,4 @@
-# Tugas 2 : Pengenalan Aplikasi Django dan Models View Template (MVT) pada Django
+# Tugas 7: Elemen Dasar Flutter
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
 
