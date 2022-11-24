@@ -60,4 +60,49 @@ const harus diinisialisasi saat kompilasi, nilai bersifat konstan dan secara lan
 
 
 
-Made with <> by [gabiiing](https://github.com/gabiiing/)
+
+
+
+# Tugas 9: Integrasi Web Service pada Flutter
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
+
+## Creator
+Nama : Gabriel Zebaoth Krisopras Putra  
+
+NPM : 2106751480
+
+Kelas : PBP-D
+
+
+# Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?.
+
+Kita dapat fetch sebuah data JSON tanpa membuat model atau class datanya terlebih dahulu. Alih-alih, kita dapat membuat sebuah map, dengan pasangan key value. Hal ini bisa saja dan mungkin berhasil untuk kasus tertentu. Namun, jika data JSON kosong atau fields pada JSON tersebut tidak sesuai dengan harapan, misalnya fieldsnya memiliki nama yang berubah-ubah, maka hal terebut hanya membuat aplikasi yang kita buat error dan tidak berfungsi dengan baik pada waktu tertentu
+  
+
+# Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+Adapun widget yang saya gunakan untuk menyelesaikan tugas 9  ini adalah:
+- ```Text```  merupakan sebuah widget untuk menampilkan tulisan.
+- ```Padding``` merupakan sebuah widget untuk memberikan jarak/space antara content dengna border dari content tersebut.
+- ```ListTile``` Merupakan main atau core component dari flutter. Widget ini merupakan landasan untuk widget lain, seperti Scaffold, Text, TextStyle, Row, dan sebagainya. Widget ini menerapkan style *material design*
+- ```Scaffold``` merupakan pengatur struktur visual layout yang mengimplementasikan *material design* dari ```MaterialApp```.
+- ```Column``` merupakan widget yang digunakan untuk mengatur tata letak kumpulan widget atau container dalam kolom-kolom.
+- ```Center``` merupakan widget yang berfungsi untuk memposisikan child-widget di posisi center dari parent-widget/container
+- ```Expanded``` merupaan widget yang digunakan untu meng-*extend*  widget Row, Column, dan sejenisnya.
+- ```TextStyle``` merupakan widget yang berfungsi untuk menambahkan *design/styling* pada test: bisa berupa warna atau hal lain.
+- ```floatingActionButton``` merupakan sebuah widget untuk membuat button dengan text
+- ```FutureBuilder`` merupakan widget yang mendukung proses asinkronus. Widget yang dapat membangun children berdasarkan snapshot terakhir yang pada data Future.
+
+# Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
+
+Membuat Model sesuai dengan fields pada data JSON yang akan diambil. Pada Model tersebut, sudah terdapat function untuk : mengubah data JSON menjadi instance class model tersebut dan juga mengubah instance  class model tersebut menjadi data JSON. Karena kita akan melakukan method GET, maka kita bisa langsung gunakan function asynchronus untuk mengambil data JSON, kemudian gunakan function ```fromJSON(String d)``` -> untuk membuat instance object dari class model ```Watchlist```. Kemudian, model tersebut akan ditambahkan pada sebuah list ```Future<List<Watchlist>>```
+
+
+# Jelaskan bagaimana cara kamu mengimplementasikan checlist diatas
+1. Membuat watchlist_view.dart, kemudian menambahkan path atau route pada DrawerMenu(). 
+2. Membuka website tugas PBP Heroku, ambil path /mywatchlist/JSON/ dan copy data pada web tersebut. Lalu, paste data tersebut pada QuickType untuk membuat dart class : ```Watchlist```
+3. Membuat data/watchlist_data.dart untuk membuat sebuah function yang dapat mengambil data dari page heroku dan mengubahnya menjadi instance class dari Watchlist.
+4. Membuat MyWatchListViewState. Di dalamnya, saya membuat function setInit() -> untuk mengambil data dari watchlist_data. Lalu disimpan dalam tipe data Future<List<Watchlist>>. Setelah itu, saya menggunakan FutureBuilder yang didalamnya terdapat ListView. Didalam listview, ada informasi terkait dengan watchlist saya. FutureBuilder inilah yang otomatis membangung listview sesuai dengan snapshot yang diambil dari data Future.
+5. Selanjutnya, saya membuat sebuah file watchlist_detail.dart, yaitu page untuk menampilkan data watchlist saya. Disini, saya hanya menggunakan widget text dan stylingtext saja.
+6. Agar setiap item listview yang diklik langsung pindah ke page detail_movie, maka saya menambahkan attribut onTap: panggil MaterialPageRoute yang mengarah ke Detail(attribute_movie).
+7.  Pada halaman detail movie, saya menambahkan back button agar pengguna dapat kembali ke page watchlist_view.
+
