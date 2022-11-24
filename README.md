@@ -81,6 +81,7 @@ Kita dapat fetch sebuah data JSON tanpa membuat model atau class datanya terlebi
 
 # Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
 Adapun widget yang saya gunakan untuk menyelesaikan tugas 9  ini adalah:
+- ```card``` widget untuk menampilkan data watchlist dalam bentuk bar.
 - ```Text```  merupakan sebuah widget untuk menampilkan tulisan.
 - ```Padding``` merupakan sebuah widget untuk memberikan jarak/space antara content dengna border dari content tersebut.
 - ```ListTile``` Merupakan main atau core component dari flutter. Widget ini merupakan landasan untuk widget lain, seperti Scaffold, Text, TextStyle, Row, dan sebagainya. Widget ini menerapkan style *material design*
